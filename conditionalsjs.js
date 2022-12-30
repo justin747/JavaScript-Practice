@@ -13,3 +13,4 @@ console.log(caliNBA)
 console.log(caliNFL)
 
 caliNBA.includes("Kings")
+

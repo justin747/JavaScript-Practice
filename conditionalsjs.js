@@ -80,3 +80,9 @@ for (let score of scores) {
 }
 
 console.log(total/scores.length)
+
+function betweenFunc(min, max) {
+    return function (num) {
+        return num >= min && num <=max;
+    }
+}

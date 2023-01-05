@@ -112,3 +112,9 @@ const jobs = ["Google", "Netflix", "Apple"]
 jobs.forEach(function (i){
     console.log(i)
 })
+
+const cities = ["New York", "LA", "The Bay", "London"]
+
+let bigCities = cities.map(function (i) {
+    return i.toUpperCase()
+})

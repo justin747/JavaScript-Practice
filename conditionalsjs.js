@@ -118,3 +118,28 @@ const cities = ["New York", "LA", "The Bay", "London"]
 let bigCities = cities.map(function (i) {
     return i.toUpperCase()
 })
+
+const cityStates = [{
+    city: "New York",
+    state: "New York"
+},{
+    city: "LA",
+    state: "California"
+},{
+    city: "The Bay",
+    state: "California"
+}]
+
+const state = cityStates.map(function (area) {
+    return area.state;
+}) 
+
+setTimeout(function(i){
+    console.log("Hello!")
+}, 3000)
+
+const id = setInterval(() => {
+    console.log(Math.random() * 10 + 1)
+}, 3000)
+
+clearInterval(id)

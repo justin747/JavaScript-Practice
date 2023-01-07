@@ -143,3 +143,9 @@ const id = setInterval(() => {
 }, 3000)
 
 clearInterval(id)
+
+const prices = [9.99, 15.99, 100, 49.99, 1.50];
+
+prices.reduce((total, price) => {
+    return total + price
+})

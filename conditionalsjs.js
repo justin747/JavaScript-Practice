@@ -190,10 +190,12 @@ const dataFromForm = {
     username: "brittbakerdmd"
 }
 
-let newUser = {...dataFromForm, id: 12345, isAdmin: true}
+let newUser = { ...dataFromForm, id: 12345, isAdmin: true }
 
 //Testing Spread with Function Calls
 
 Math.max(...nums3)
 
 Math.min(...nums3)
+
+document.getElementById("test");

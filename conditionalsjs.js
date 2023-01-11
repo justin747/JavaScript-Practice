@@ -198,4 +198,9 @@ Math.max(...nums3)
 
 Math.min(...nums3)
 
-document.getElementById("test");
+const allTests = document.getElementById("test");
+
+const allParagraphs = document.getElementsByTagName("p");
+
+const squareImages = document.getElementsByClassName('square');
+

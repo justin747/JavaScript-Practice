@@ -204,3 +204,7 @@ const allParagraphs = document.getElementsByTagName("p");
 
 const squareImages = document.getElementsByClassName('square');
 
+//Get Element by Type
+
+const getByType = document.querySelector('[name="your-selector-name-here"]');
+

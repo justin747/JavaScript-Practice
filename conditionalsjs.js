@@ -206,5 +206,5 @@ const squareImages = document.getElementsByClassName('square');
 
 //Get Element by Type
 
-const getByType = document.querySelector('[tite="sectionheading"]');
+const getByType = document.querySelector('[title="sectionheading"]');
 

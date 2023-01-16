@@ -208,5 +208,5 @@ const squareImages = document.getElementsByClassName('square');
 
 const getByType = document.querySelector('[title="sectionheading"]');
 
-const innerHTML = document.querySelector("p").inn
+const innerHTML = document.querySelector("p")
 

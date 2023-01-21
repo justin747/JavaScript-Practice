@@ -24,17 +24,57 @@
 
 //Write a function that takes a string and returns an object with the letters and the number of their occurrences.
 
+// function charCount(str) {
+//     var result = {};
+
+//     for (var i = 0; i < str.length; i++) {
+//         var char = str[i].toLowerCase();
+//         if (/[a-z0-9]/.test(char) { })
+//         if (result[char] > 0) {
+//             result[char]++;
+//         } else {
+//             result[char] = 1;
+//         };
+//     }
+// }
+// return result;
+// }
+
 function charCount(str) {
     var result = {};
 
-    for(var i = 0; i < str.length; i++) {
-        var char = str[i];
-        if (result[char] > 0) {
-            result[char]++;
-        } else {
-            result[char] = 1;
-        };
+    for (var char of str) {
+        if (isAlphaNumeric(char)) {
+            char = str[i].toLowerCase();
+            result[char] = ++result[char] || 1;
+        }
     }
-
     return result;
 }
+
+function isAlphaNumeric(char) {
+    var code = char.charCodeAt(0);
+    if (!(code > 47 && code < 58) &&
+        !(code > 64 && code < 91) &&
+        !(code > 96 && code < 123)) {
+        return false;
+    }
+    return true;
+}
+
+function same(arr1, arr2){
+    if(arr1.length !== arr2.length){
+        return false;
+    }
+    for(let i = 0; i < arr1.length; i++){
+        let correctIndex = arr2.indexOf(arr1[i] ** 2)
+        if(correctIndex === -1) {
+            return false;
+        }
+        console.log(arr2);
+        arr2.splice(correctIndex,1)
+    }
+    return true;
+}
+
+same([1,2,3,2], [9,1,4,4])

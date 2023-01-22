@@ -40,41 +40,75 @@
 // return result;
 // }
 
-function charCount(str) {
-    var result = {};
 
-    for (var char of str) {
-        if (isAlphaNumeric(char)) {
-            char = str[i].toLowerCase();
-            result[char] = ++result[char] || 1;
-        }
-    }
-    return result;
-}
+// function charCount(str) {
+//     var result = {};
 
-function isAlphaNumeric(char) {
-    var code = char.charCodeAt(0);
-    if (!(code > 47 && code < 58) &&
-        !(code > 64 && code < 91) &&
-        !(code > 96 && code < 123)) {
+//     for (var char of str) {
+//         if (isAlphaNumeric(char)) {
+//             char = str[i].toLowerCase();
+//             result[char] = ++result[char] || 1;
+//         }
+//     }
+//     return result;
+// }
+
+// function isAlphaNumeric(char) {
+//     var code = char.charCodeAt(0);
+//     if (!(code > 47 && code < 58) &&
+//         !(code > 64 && code < 91) &&
+//         !(code > 96 && code < 123)) {
+//         return false;
+//     }
+//     return true;
+// }
+
+
+
+//Frequecy Counter
+
+// function same(arr1, arr2){
+//     if(arr1.length !== arr2.length){
+//         return false;
+//     }
+//     for(let i = 0; i < arr1.length; i++){
+//         let correctIndex = arr2.indexOf(arr1[i] ** 2)
+//         if(correctIndex === -1) {
+//             return false;
+//         }
+//         console.log(arr2);
+//         arr2.splice(correctIndex,1)
+//     }
+//     return true;
+// }
+
+// same([1,2,3,2], [9,1,4,4])
+
+
+function same(arr1, arr2) {
+    if (arr1.length !== arr2.length) {
         return false;
     }
-    return true;
-}
 
-function same(arr1, arr2){
-    if(arr1.length !== arr2.length){
-        return false;
+    let frequencyCounter1 = {};
+    let frequencyCounter2 = {};
+
+    for (let val of arr1) {
+        frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1
     }
-    for(let i = 0; i < arr1.length; i++){
-        let correctIndex = arr2.indexOf(arr1[i] ** 2)
-        if(correctIndex === -1) {
+
+    for (let val of arr2) {
+        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1
+    }
+
+    for (let key in frequencyCounter1){
+        if (!(key ** 2 in frequencyCounter2)) {
             return false;
         }
-        console.log(arr2);
-        arr2.splice(correctIndex,1)
+        if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
+            return false;
+        }
     }
+
     return true;
 }
-
-same([1,2,3,2], [9,1,4,4])

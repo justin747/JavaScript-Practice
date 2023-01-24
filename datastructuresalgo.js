@@ -172,3 +172,34 @@ function validAnagram(obj1, obj2){
 
     return true;
   }
+
+  //Colt's Solution - sumZero Algo
+
+  function sumZero(arr){
+    let left = 0;
+    let right = arr.length - 1;
+
+    while(left < right){
+        let sum = arr[left] + arr[right];
+        if(sum === 0){
+            return [arr[left, arr[right]]];
+        } else if(sum > 0) {
+            right--;
+        } else {
+            left++;
+        }
+    }
+  }
+
+  //Colt's Solution - countUniqueValues Algo
+
+  function countUniqueValues(arr){
+    var i = 0;
+
+    for (var j = 1; j < arr.length; j++){
+        if(arr[i] !== arr[j]){
+            i++;
+            arr[i] = arr[j];
+        }
+    }
+  }

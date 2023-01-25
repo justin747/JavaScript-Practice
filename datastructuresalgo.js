@@ -191,9 +191,11 @@ function validAnagram(obj1, obj2){
     }
   }
 
-  //Colt's Solution - countUniqueValues Algo
+  //Colt's Solution - countUniqueValues Algo - Runtime: O(n)
 
   function countUniqueValues(arr){
+
+    if(arr.length === 0) {return 0;}
     var i = 0;
 
     for (var j = 1; j < arr.length; j++){
@@ -203,3 +205,24 @@ function validAnagram(obj1, obj2){
         }
     }
   }
+
+//Colt's Solution - Sliding Window Algo - Runtime: O(n)
+
+function maxSubarraySum(arr, num){
+    let maxSum = 0;
+    let tempSum = ;
+
+    if (arr.length < num) return null;
+    for (let i = 0; i < num; i++){
+        maxSum += arr[i];
+    }
+
+    tempSum = maxSum;
+    for (let i = num; i < arr.length; i++){
+        tempSum = tempSum - arr[i - num] + arr[i];
+        maxSum = Math.max(maxSum, tempSum);
+    }
+
+    return maxSum;
+}
+

@@ -291,3 +291,15 @@ function collectOddValues(arr){
     newArr = newArr.concat(collectOddValues(arr.slice(1)));
     return newArr;
 }
+
+//Colt Steele - Linear Search Problem
+
+function linearSearch(arr, val){
+    for(var i = 0; i < arr.length; i++){
+        if (arr[i] === val){
+            return i;
+        } else {
+            return -1;
+        }
+    }
+}

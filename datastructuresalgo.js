@@ -210,7 +210,7 @@ function validAnagram(obj1, obj2){
 
 function maxSubarraySum(arr, num){
     let maxSum = 0;
-    let tempSum = ;
+    let tempSum = 0;
 
     if (arr.length < num) return null;
     for (let i = 0; i < num; i++){
@@ -226,3 +226,68 @@ function maxSubarraySum(arr, num){
     return maxSum;
 }
 
+
+//Recursion
+
+function countDown(num){
+    if (num <= 0){
+        console.log("All Done!");
+        return;
+    }
+    console.log(num);
+    num--;
+    countDown(num);
+}
+
+function sumRange(num){
+    if(num === 1) return 1;
+    return num + sumRange(num - 1);
+}
+
+//Recursion Factorial
+
+function factorial(num){
+    if(num === 1) return 1;
+    return num * factorial(num - 1);
+}
+
+//Recursion with Helper Function
+
+function collectOddValues(arr){
+    let result = [];
+
+    function helper(helperInput){
+        if(helperInput.length === 0){
+            return;
+        }
+
+        if(helperInput[0] % 2 !== 0){
+            result.push(helperInput[0])
+        }
+
+        helper(helperInput.slice(1))
+    }
+
+    helper(arr)
+
+    return result;
+}
+
+
+
+//Pure Recursion of Helper Function Recursion
+
+function collectOddValues(arr){
+    let newArr = [];
+
+    if(arr.length === 0){
+        return newArr;
+    }
+
+    if(arr[0] % 2 !== 0 ){
+        newArr.push(arr[0]);
+    }
+
+    newArr = newArr.concat(collectOddValues(arr.slice(1)));
+    return newArr;
+}
